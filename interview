@@ -1,0 +1,16 @@
+def minPosInt(seq):
+    seen = [False] * len(seq)
+    for value in seq:
+        if 0 < value <= len(seq):
+            seen[value - 1] = True
+
+    for index in xrange(len(seq)):
+        if seen[index] == False:
+            return index + 1
+
+    return len(seq) + 1
+
+a = [10, 1, 2, 5, 6]
+
+print minPosInt(a)
+
